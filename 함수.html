@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <style>
+        #monitor {
+          width: 400px;
+          height: 300px;
+          background: #000;
+          border: 10px solid #ccc;
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+        
+        // 함수를 선언하기: function 함수명(){}
+        function myFunc() {
+          // 여기다 코드를 작성
+          document.write('<h2>함수 실행됨</h2>');
+        }
+    
+        // 함수 실행(호출)
+        myFunc();
+        myFunc();
+    
+        function setBgColor() {
+          document.body.style.backgroundColor = "pink";
+        }
+    
+      </script>
+      
+      <!-- 이벤트 -->
+      <button onclick="setBgColor();">배경색 변경하기</button>
+    
+    
+      <div id="monitor"></div>
+    
+      <button id="on" onclick="monitorOn();">모니터 켜기</button>
+      <button id="off" onclick="monitorOff();">모니터 끄기</button>
+      <button id="changeColor" onclick="changeMonitorColor()">모니터색상 변경</button>
+    
+      <script>
+        // 모니터 켜는 함수
+        function monitorOn() {
+          console.log('모니터를 켰습니다.');
+          document.getElementById('monitor').style.backgroundColor = "white";
+        }
+    
+        // 모니터 끄는 함수
+        function monitorOff() {
+          console.log('모니터를 껏습니다.');
+          // 모니터 검정색으로 변경
+          document.getElementById('monitor').style.backgroundColor = "black";
+        }
+    
+        var i = 0; // 함수 밖의 변수(전역변수)
+        // 모니터 색상 바꾸기
+        function changeMonitorColor() {
+          // 함수내의 코드는 실행되고 나서 끝(사라짐)
+          var color = ['yellow', 'aqua', 'purple', 'lightgreen'];
+          console.log('color배열.lengrh = ' + color.length);
+          document.getElementById('monitor').style.backgroundColor = color[i];
+          // 마지막 배열값이면 0(처음)으로
+          if(i >= (color.length-1)) {
+            i = 0;
+          } else {
+            i++; // 값을 1씩 증가
+          }
+          console.log(i)   
+          // 모든 업무 끝
+        }
+    
+        console.log(i)
+    
+      </script>
+  <script>
+    /* 더하기 함수 선언 */
+    function add() {
+      var a = 1;
+      var b = 2;
+      document.write('<br>a + b = ', a + b);
+    }
+
+    // 함수실행
+    add();
+
+    // 내가 원하는 값을 계산 -> 매개변수(parameter)
+    function add2(a, b) {
+      // 함수 내의 코드는 함수가 종료되면 모두 끝
+      var result = a + b;
+      // document.write('<br>a + b =', result);
+      return result;
+    }
+
+    // 함수의 결과값을 가져오기
+    var a = add2(3, 4);
+
+    document.write('<br>함수 안의 결과값 = ', a);
+
+  </script>
+      
+    </body>
+    </html>

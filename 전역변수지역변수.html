@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>전역변수_지역변수</title>
+</head>
+<body>
+    <script>
+        //변수가 어디에 있는가를 확인하는 것을 스코프
+        let a = 1;
+        document.write('<br>a = ', a);
+
+        let name = '홍길동'; //전역변수(모든지역가능)
+        //함수안에 변수 - 지역변수
+        function 제주도() {
+            let name = '김길동';
+            document.write('<p>제주도 전역변수 '+name+'</p>')
+        ;}
+
+        function 김포() {
+            let name = '김길동';
+            document.write('<p>김포 전역변수 '+name+'</p>')
+        ;}
+
+            
+
+
+
+    </script>
+    
+
+
+</body>
+</html>
